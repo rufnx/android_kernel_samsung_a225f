@@ -39,6 +39,8 @@
 *.symtypes
 *.tar
 *.xz
+*.orig
+*.rej
 Module.symvers
 modules.builtin
 
@@ -54,7 +56,8 @@ modules.builtin
 /vmlinuz
 /System.map
 /Module.markers
-
+/out
+/toolchain
 #
 # RPM spec file (make rpm-pkg)
 #
