@@ -78,14 +78,14 @@ if [ -f $GZIP ]; then
     cp $GZIP $ZIP_DIR/
 
     # Create zip file
-    zip_name=Kernel-$(date +%Y%m%d-%H%M).zip
+    ZIP_NAME=A22-$(date +%Y%m%d-%H%M).zip
     cd $ZIP_DIR
     zip -r9 $ZIP_NAME * -x .git README.md *placeholder
     cd $KERNEL_DIR
 
     # Send to Telegram
-    message=$(build_message)
-    send_telegram $ZIP_DIR/$ZIP_NAME "$message"
+    MSG=$(build_message)
+    send_telegram $ZIP_DIR/$ZIP_NAME "$MSG"
     echo "Kernel zip sent to Telegram successfully!"
 else
     echo "########################"
