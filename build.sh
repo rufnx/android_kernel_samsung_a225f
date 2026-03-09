@@ -40,10 +40,10 @@ function build_message() {
 if [ ! -d $TOOLCHAIN ]; then
     git clone https://github.com/rufnx/toolchain.git --depth=1 -b clang-13 $TOOLCHAIN
     $TOOLCHAIN/bin/clang --version
-    export PATH=$TOOLCHAIN/bin:$PATH
 fi
 
 ARGS=(
+    PATH=$TOOLCHAIN/bin:$PATH
     -j$(nproc --all)
     O=out
     ARCH=arm64
